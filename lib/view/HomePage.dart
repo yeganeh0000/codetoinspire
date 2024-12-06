@@ -1,14 +1,14 @@
+import 'package:codetolnspire/component/IconBorderRadius.dart';
 import 'package:flutter/material.dart';
-import '/custom/BorderIcon.dart';
-import '/custom/OptionButton.dart';
+import '../component/SettingsButton.dart';
+import '../constants/colors_text_theme.dart';
+import '../constants/dimensions.dart';
 import '/sample_data.dart';
-import '/screens/DetailPage.dart';
-import '/utils/constants.dart';
-import '/utils/custom_functions.dart';
-import '/utils/widget_functions.dart';
+import '../Component/format_func.dart';
+import 'SinglePage.dart';
 
-class LandingPage extends StatelessWidget {
-  const LandingPage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,20 +32,20 @@ class LandingPage extends StatelessWidget {
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      BorderIcon(
+                      IconBorderRadius(
                         height: 50,
                         width: 50,
                         child: Icon(
                           Icons.menu,
-                          color: COLOR_BLACK,
+                          color: colorBlack,
                         ),
                       ),
-                      BorderIcon(
+                      IconBorderRadius(
                         height: 50,
                         width: 50,
                         child: Icon(
                           Icons.settings,
-                          color: COLOR_BLACK,
+                          color: colorBlack,
                         ),
                       ),
                     ],
@@ -71,7 +71,7 @@ class LandingPage extends StatelessWidget {
                     padding: sidePadding,
                     child: const Divider(
                       height: 25,
-                      color: COLOR_GREY,
+                      color: colorGrey,
                     )),
                 addVerticalSpace(10),
                 SingleChildScrollView(
@@ -102,7 +102,7 @@ class LandingPage extends StatelessWidget {
               bottom: 20,
               width: size.width,
               child: Center(
-                child: OptionButton(
+                child: SettingsButton(
                   text: "Map View",
                   icon: Icons.map_rounded,
                   width: size.width * 0.36,
@@ -129,7 +129,7 @@ class ChoiceOption extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     return Container(
       decoration: BoxDecoration(
-        color: COLOR_GREY.withAlpha(25),
+        color: colorGrey.withAlpha(25),
         borderRadius: BorderRadius.circular(20.0),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
@@ -156,7 +156,7 @@ class RealEstateItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => DetailPage(
+            builder: (context) => SinglePage(
                   itemData: itemData,
                 )));
       },
@@ -171,10 +171,10 @@ class RealEstateItem extends StatelessWidget {
                 const Positioned(
                     top: 15,
                     right: 15,
-                    child: BorderIcon(
+                    child: IconBorderRadius(
                         child: Icon(
                       Icons.favorite_border,
-                      color: COLOR_BLACK,
+                      color: colorBlack,
                     )))
               ],
             ),

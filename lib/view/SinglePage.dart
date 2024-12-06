@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import '/custom/BorderIcon.dart';
-import '/custom/OptionButton.dart';
-import '/utils/constants.dart';
-import '/utils/custom_functions.dart';
-import '/utils/widget_functions.dart';
+import '../Component/format_func.dart';
+import '../component/IconBorderRadius.dart';
+import '../component/SettingsButton.dart';
+import '../constants/colors_text_theme.dart';
+import '../constants/dimensions.dart';
 
-class DetailPage extends StatelessWidget {
+class SinglePage extends StatelessWidget {
   final dynamic itemData;
 
-  const DetailPage({Key? key,required this.itemData}) : super(key: key);
+  const SinglePage({super.key,required this.itemData});
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -17,7 +17,7 @@ class DetailPage extends StatelessWidget {
     const sidePadding = EdgeInsets.symmetric(horizontal: padding);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: COLOR_WHITE,
+        backgroundColor: colorWhite,
         body: SizedBox(
           width: size.width,
           height: size.height,
@@ -43,16 +43,16 @@ class DetailPage extends StatelessWidget {
                                   onTap: (){
                                     Navigator.pop(context);
                                   },
-                                  child: const BorderIcon(
+                                  child: const IconBorderRadius(
                                     height: 50,
                                     width: 50,
-                                    child: Icon(Icons.keyboard_backspace,color: COLOR_BLACK,),
+                                    child: Icon(Icons.keyboard_backspace,color: colorBlack,),
                                   ),
                                 ),
-                                const BorderIcon(
+                                const IconBorderRadius(
                                   height: 50,
                                   width: 50,
-                                  child: Icon(Icons.favorite_border,color: COLOR_BLACK,),
+                                  child: Icon(Icons.favorite_border,color: colorBlack,),
                                 ),
                               ],
                             ),
@@ -74,7 +74,7 @@ class DetailPage extends StatelessWidget {
                               Text("\$${itemData["address"]}",style: themeData.textTheme.titleSmall,),
                             ],
                           ),
-                          BorderIcon(padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),child: Text("20 Hours ago",style: themeData.textTheme.headlineSmall,),)
+                          IconBorderRadius(padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),child: Text("20 Hours ago",style: themeData.textTheme.headlineSmall,),)
                         ],
                       ),
                     ),
@@ -112,9 +112,9 @@ class DetailPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    OptionButton(text: "Message",icon: Icons.message,width: size.width*0.35,),
+                    SettingsButton(text: "Message",icon: Icons.message,width: size.width*0.35,),
                     addHorizontalSpace(10),
-                    OptionButton(text: "Call",icon: Icons.call,width: size.width*0.35,),
+                    SettingsButton(text: "Call",icon: Icons.call,width: size.width*0.35,),
                   ],
                 ),
               )
@@ -143,7 +143,7 @@ class InformationTile extends StatelessWidget{
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          BorderIcon(
+          IconBorderRadius(
               width: tileSize,
               height: tileSize,
               child: Text(content,style: themeData.textTheme.displaySmall,)),
