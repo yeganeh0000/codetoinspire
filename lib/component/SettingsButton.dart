@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../utils/constants.dart';
+import 'constants.dart';
 
-class OptionButton extends StatelessWidget {
+class SettingsButton extends StatelessWidget {
   final String text;
   final IconData icon;
   final double width;
 
-  const OptionButton({Key? key, required this.text, required this.icon, required this.width}) : super(key: key);
+  const SettingsButton({Key? key, required this.text, required this.icon, required this.width}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

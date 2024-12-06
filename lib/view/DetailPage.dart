@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import '/custom/BorderIcon.dart';
-import '/custom/OptionButton.dart';
-import '/utils/constants.dart';
-import '/utils/custom_functions.dart';
-import '/utils/widget_functions.dart';
 
-class DetailPage extends StatelessWidget {
+import '../component/BorderIcon.dart';
+import '../component/SettingsButton.dart';
+import '../component/constants.dart';
+import '../constants/format_func.dart';
+import '../constants/Dimensions.dart';
+
+class HomePage extends StatelessWidget {
   final dynamic itemData;
 
-  const DetailPage({Key? key,required this.itemData}) : super(key: key);
+  const HomePage({Key? key,required this.itemData}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -112,9 +113,9 @@ class DetailPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    OptionButton(text: "Message",icon: Icons.message,width: size.width*0.35,),
+                    SettingsButton(text: "Message",icon: Icons.message,width: size.width*0.35,),
                     addHorizontalSpace(10),
-                    OptionButton(text: "Call",icon: Icons.call,width: size.width*0.35,),
+                    SettingsButton(text: "Call",icon: Icons.call,width: size.width*0.35,),
                   ],
                 ),
               )

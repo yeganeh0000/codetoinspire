@@ -1,6 +1,6 @@
+import 'package:codetolnspire/view/LandingPage.dart';
 import 'package:flutter/material.dart';
-import 'screens/LandingPage.dart';
-import 'utils/constants.dart';
+import 'component/constants.dart';
 import 'dart:ui';
 
 void main() {

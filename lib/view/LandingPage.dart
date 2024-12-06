@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '/custom/BorderIcon.dart';
-import '/custom/OptionButton.dart';
+import '../component/BorderIcon.dart';
+import '../component/SettingsButton.dart';
+import '../constants/Dimensions.dart';
 import '/sample_data.dart';
-import '/screens/DetailPage.dart';
-import '/utils/constants.dart';
-import '/utils/custom_functions.dart';
-import '/utils/widget_functions.dart';
+import '../component/constants.dart';
+import '../constants/format_func.dart';
+import 'DetailPage.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -102,7 +102,7 @@ class LandingPage extends StatelessWidget {
               bottom: 20,
               width: size.width,
               child: Center(
-                child: OptionButton(
+                child: SettingsButton(
                   text: "Map View",
                   icon: Icons.map_rounded,
                   width: size.width * 0.36,
@@ -156,7 +156,7 @@ class RealEstateItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => DetailPage(
+            builder: (context) => HomePage(
                   itemData: itemData,
                 )));
       },
