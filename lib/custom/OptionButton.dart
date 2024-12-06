@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors_text_theme.dart';
+import '../utils/constants.dart';
 
-
-class SettingsButton extends StatelessWidget {
+class OptionButton extends StatelessWidget {
   final String text;
   final IconData icon;
   final double width;
 
-  const SettingsButton({
-    super.key,
-    required this.text,
-    required this.icon,
-    required this.width,
-  });
+  const OptionButton({Key? key, required this.text, required this.icon, required this.width}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +15,7 @@ class SettingsButton extends StatelessWidget {
       width: width,
       child: TextButton(
         style: TextButton.styleFrom(
-          backgroundColor: colorDarkBlue,
+          backgroundColor: COLOR_DARK_BLUE,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
@@ -33,16 +27,17 @@ class SettingsButton extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: colorWhite,
+              color: COLOR_WHITE,
             ),
             const SizedBox(width: 10),
             Text(
               text,
-              style: const TextStyle(color: colorWhite),
+              style: const TextStyle(color: COLOR_WHITE),
             ),
           ],
         ),
       ),
     );
   }
+
 }

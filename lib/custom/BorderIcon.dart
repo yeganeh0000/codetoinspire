@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors_text_theme.dart';
+import '../utils/constants.dart';
 
-
-
-class IconBorderRadius extends StatelessWidget {
+class BorderIcon extends StatelessWidget {
   final Widget child;
   final EdgeInsets? padding;
   final double? width, height;
 
-  const IconBorderRadius({
+  const BorderIcon({
     super.key,
     required this.child,
     this.padding,
@@ -23,9 +21,9 @@ class IconBorderRadius extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: colorWhite,
+        color: COLOR_WHITE,
         borderRadius: const BorderRadius.all(Radius.circular(15.0)),
-        border: Border.all(color: colorGrey.withAlpha(40), width: 2),
+        border: Border.all(color: COLOR_GREY.withAlpha(40), width: 2),
       ),
       padding: padding ?? const EdgeInsets.all(8.0),
       child: Center(child: child),

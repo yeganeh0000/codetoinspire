@@ -1,14 +1,14 @@
-import 'package:codetolnspire/component/IconBorderRadius.dart';
 import 'package:flutter/material.dart';
-import '../component/SettingsButton.dart';
-import '../constants/colors_text_theme.dart';
-import '../constants/dimensions.dart';
+import '/custom/BorderIcon.dart';
+import '/custom/OptionButton.dart';
 import '/sample_data.dart';
-import '../Component/format_func.dart';
-import 'SinglePage.dart';
+import '/screens/DetailPage.dart';
+import '/utils/constants.dart';
+import '/utils/custom_functions.dart';
+import '/utils/widget_functions.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class LandingPage extends StatelessWidget {
+  const LandingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,20 +32,20 @@ class HomePage extends StatelessWidget {
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconBorderRadius(
+                      BorderIcon(
                         height: 50,
                         width: 50,
                         child: Icon(
                           Icons.menu,
-                          color: colorBlack,
+                          color: COLOR_BLACK,
                         ),
                       ),
-                      IconBorderRadius(
+                      BorderIcon(
                         height: 50,
                         width: 50,
                         child: Icon(
                           Icons.settings,
-                          color: colorBlack,
+                          color: COLOR_BLACK,
                         ),
                       ),
                     ],
@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                     padding: sidePadding,
                     child: const Divider(
                       height: 25,
-                      color: colorGrey,
+                      color: COLOR_GREY,
                     )),
                 addVerticalSpace(10),
                 SingleChildScrollView(
@@ -102,7 +102,7 @@ class HomePage extends StatelessWidget {
               bottom: 20,
               width: size.width,
               child: Center(
-                child: SettingsButton(
+                child: OptionButton(
                   text: "Map View",
                   icon: Icons.map_rounded,
                   width: size.width * 0.36,
@@ -129,7 +129,7 @@ class ChoiceOption extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     return Container(
       decoration: BoxDecoration(
-        color: colorGrey.withAlpha(25),
+        color: COLOR_GREY.withAlpha(25),
         borderRadius: BorderRadius.circular(20.0),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
@@ -156,7 +156,7 @@ class RealEstateItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => SinglePage(
+            builder: (context) => DetailPage(
                   itemData: itemData,
                 )));
       },
@@ -171,10 +171,10 @@ class RealEstateItem extends StatelessWidget {
                 const Positioned(
                     top: 15,
                     right: 15,
-                    child: IconBorderRadius(
+                    child: BorderIcon(
                         child: Icon(
                       Icons.favorite_border,
-                      color: colorBlack,
+                      color: COLOR_BLACK,
                     )))
               ],
             ),
