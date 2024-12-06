@@ -21,9 +21,9 @@ class BorderIcon extends BorderIconRadius.StatelessWidget {
       width: width,
       height: height,
       decoration: BorderIconRadius.BoxDecoration(
-        color: COLOR_WHITE,
+        color: colorWhite,
         borderRadius: const BorderIconRadius.BorderRadius.all(BorderIconRadius.Radius.circular(15.0)),
-        border: BorderIconRadius.Border.all(color: COLOR_GREY.withAlpha(40), width: 2),
+        border: BorderIconRadius.Border.all(color: colorGrey.withAlpha(40), width: 2),
       ),
       padding: padding ?? const BorderIconRadius.EdgeInsets.all(8.0),
       child: BorderIconRadius.Center(child: child),

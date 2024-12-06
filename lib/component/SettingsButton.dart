@@ -15,7 +15,7 @@ class SettingsButton extends StatelessWidget {
       width: width,
       child: TextButton(
         style: TextButton.styleFrom(
-          backgroundColor: COLOR_DARK_BLUE,
+          backgroundColor: colorDarkBlue,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
@@ -27,12 +27,12 @@ class SettingsButton extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: COLOR_WHITE,
+              color: colorWhite,
             ),
             const SizedBox(width: 10),
             Text(
               text,
-              style: const TextStyle(color: COLOR_WHITE),
+              style: const TextStyle(color: colorWhite),
             ),
           ],
         ),

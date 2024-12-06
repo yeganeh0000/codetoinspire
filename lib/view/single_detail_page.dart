@@ -6,10 +6,10 @@ import '../component/constants.dart';
 import '../constants/format_func.dart';
 import '../constants/Dimensions.dart';
 
-class HomePage extends StatelessWidget {
+class SinglePage extends StatelessWidget {
   final dynamic itemData;
 
-  const HomePage({Key? key,required this.itemData}) : super(key: key);
+  const SinglePage({Key? key,required this.itemData}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
     const sidePadding = EdgeInsets.symmetric(horizontal: padding);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: COLOR_WHITE,
+        backgroundColor: colorWhite,
         body: SizedBox(
           width: size.width,
           height: size.height,
@@ -47,13 +47,13 @@ class HomePage extends StatelessWidget {
                                   child: const BorderIcon(
                                     height: 50,
                                     width: 50,
-                                    child: Icon(Icons.keyboard_backspace,color: COLOR_BLACK,),
+                                    child: Icon(Icons.keyboard_backspace,color: colorBlack,),
                                   ),
                                 ),
                                 const BorderIcon(
                                   height: 50,
                                   width: 50,
-                                  child: Icon(Icons.favorite_border,color: COLOR_BLACK,),
+                                  child: Icon(Icons.favorite_border,color: colorBlack,),
                                 ),
                               ],
                             ),

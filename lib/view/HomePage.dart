@@ -5,10 +5,10 @@ import '../constants/Dimensions.dart';
 import '/sample_data.dart';
 import '../component/constants.dart';
 import '../constants/format_func.dart';
-import 'DetailPage.dart';
+import 'single_detail_page.dart';
 
-class LandingPage extends StatelessWidget {
-  const LandingPage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class LandingPage extends StatelessWidget {
                         width: 50,
                         child: Icon(
                           Icons.menu,
-                          color: COLOR_BLACK,
+                          color: colorBlack,
                         ),
                       ),
                       BorderIcon(
@@ -45,7 +45,7 @@ class LandingPage extends StatelessWidget {
                         width: 50,
                         child: Icon(
                           Icons.settings,
-                          color: COLOR_BLACK,
+                          color: colorBlack,
                         ),
                       ),
                     ],
@@ -71,7 +71,7 @@ class LandingPage extends StatelessWidget {
                     padding: sidePadding,
                     child: const Divider(
                       height: 25,
-                      color: COLOR_GREY,
+                      color: colorGrey,
                     )),
                 addVerticalSpace(10),
                 SingleChildScrollView(
@@ -129,7 +129,7 @@ class ChoiceOption extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     return Container(
       decoration: BoxDecoration(
-        color: COLOR_GREY.withAlpha(25),
+        color: colorGrey.withAlpha(25),
         borderRadius: BorderRadius.circular(20.0),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
@@ -156,7 +156,7 @@ class RealEstateItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => HomePage(
+            builder: (context) => SinglePage(
                   itemData: itemData,
                 )));
       },
@@ -174,7 +174,7 @@ class RealEstateItem extends StatelessWidget {
                     child: BorderIcon(
                         child: Icon(
                       Icons.favorite_border,
-                      color: COLOR_BLACK,
+                      color: colorBlack,
                     )))
               ],
             ),
